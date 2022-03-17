@@ -9,7 +9,11 @@ from random import randint
 
 class AlienFleet:
     alien_exploding_images = [pg.image.load(f'images/rainbow_explode{n}.png') for n in range(8)]
-    alien_images = [pg.image.load(f'images/green_alien{n}.png') for n in range(3)]
+    alien_one_imgs = [pg.transform.rotozoom(pg.image.load(f'images/green_alien{n}.png'), 1, 1) for n in range(3)]
+    alien_two_imgs = [pg.transform.rotozoom(pg.image.load(f'images/orange_alien{n}.png'), 0, 1) for n in range(3)]
+    alien_three_imgs = [pg.transform.rotozoom(pg.image.load(f'images/red_alien{n}.png'), 0, 1) for n in range(3)]
+
+    alien_images = [alien_one_imgs, alien_two_imgs, alien_three_imgs]
     ufo_imgs = [pg.transform.rotozoom(pg.image.load(f'images/skull_alien{n}.png'), 0, 0.7) for n in range(3)]
     alien_images.append(ufo_imgs)
     alien_points = [40, 20, 10, 100]
